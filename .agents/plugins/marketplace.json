@@ -1,0 +1,15 @@
+{
+  "name": "humanizer-marketplace",
+  "interface": {
+    "displayName": "Humanizer"
+  },
+  "plugins": [
+    {
+      "name": "humanizer",
+      "source": {
+        "source": "local",
+        "path": "."
+      }
+    }
+  ]
+}

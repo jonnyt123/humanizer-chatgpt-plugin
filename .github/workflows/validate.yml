@@ -19,3 +19,11 @@ jobs:
           python-version: '3.12'
       - name: Validate plugin package
         run: python3 scripts/validate-plugin.py
+      - name: Build submission ZIP
+        run: python3 scripts/build-submission.py
+      - name: Upload submission ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: humanizer-plugin-${{ github.sha }}
+          path: dist/humanizer-plugin-v*.zip
+          if-no-files-found: error

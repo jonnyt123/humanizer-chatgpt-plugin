@@ -1,8 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "humanizer",
-  "version": "3.8.0",
-  "description": "Humanize prose and lyrics, preserve the writer's voice, score rap technique, optimize verses and hooks, and generate BPM-aware flow patterns.",
+  "version": "3.8.1",
+  "description": "Humanize prose and lyrics while preserving meaning, supported facts, and the writer's voice. Includes lyric artifact diagnostics, rap technique analysis, verse and hook optimization, and BPM-aware flow planning.",
+  "author": {
+    "name": "Jonathan Thompson",
+    "url": "https://github.com/jonnyt123"
+  },
+  "homepage": "https://github.com/jonnyt123/humanizer-chatgpt-plugin",
+  "repository": "https://github.com/jonnyt123/humanizer-chatgpt-plugin",
   "license": "MIT",
   "keywords": [
     "writing",
@@ -20,16 +26,31 @@
     "com.openai": {
       "interface": {
         "displayName": "Humanizer",
-        "shortDescription": "Humanize writing and optimize lyrics without flattening the writer's voice.",
-        "longDescription": "Humanizer rewrites AI-sounding prose and lyrics while preserving meaning, concrete details, and voice. For rap, it can score artifact risk, multisyllabic rhyme, pocket, cadence, and rhyme density; protect strong bars; optimize full verses and verse-to-hook transitions; use supplied BPM and meter for beat-grid-aware analysis; and suggest context-aware flow patterns without pretending text alone reveals exact performed microtiming.",
-        "category": "Productivity",
-        "defaultPrompt": [
-          "Humanize this text while preserving my voice and every supported fact.",
-          "Score these lyrics for AI-writing artifacts, then rewrite only the weak lines.",
-          "Analyze this rap verse for multis, pocket, cadence, and rhyme density, then improve the weak bars without touching the strong ones.",
-          "At 142 BPM in 4/4, optimize this verse and hook together and suggest a flow pattern for each bar."
+        "shortDescription": "Humanize writing and lyrics",
+        "longDescription": "Humanizer rewrites AI-sounding prose and lyrics while preserving meaning, supported facts, concrete detail, and the writer's voice. It can learn a reusable voice fingerprint from supplied writing samples, score lyric artifact risk as an editing diagnostic, analyze rap technique across multisyllabic rhyme, pocket, cadence, and rhyme density, protect strong bars while repairing weak ones, optimize complete verses and verse-to-hook transitions, and use supplied BPM and meter for beat-grid-aware flow planning. Humanizer is skills-only: it has no external account connection, no MCP server, and no independent data collection.",
+        "developerName": "Jonathan Thompson",
+        "category": "Creativity",
+        "capabilities": [
+          "Humanize prose without changing supported facts",
+          "Match voice from supplied writing samples",
+          "Score lyric artifact risk as an editing diagnostic",
+          "Analyze rap multis, pocket, cadence, and rhyme density",
+          "Optimize weak bars while preserving strong lines",
+          "Optimize verses, hooks, transitions, and BPM-aware flow"
         ],
-        "brandColor": "#111827"
+        "websiteURL": "https://github.com/jonnyt123/humanizer-chatgpt-plugin",
+        "privacyPolicyURL": "https://github.com/jonnyt123/humanizer-chatgpt-plugin/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/jonnyt123/humanizer-chatgpt-plugin/blob/main/TERMS.md",
+        "supportURL": "https://github.com/jonnyt123/humanizer-chatgpt-plugin/issues",
+        "defaultPrompt": [
+          "Humanize this draft while preserving my voice, meaning, and supported facts.",
+          "Score these lyrics for AI-writing artifacts and rewrite only the weak lines.",
+          "Analyze this rap verse for multis, pocket, cadence, and rhyme density, then improve weak bars."
+        ],
+        "brandColor": "#111827",
+        "brandColorDark": "#E5E7EB",
+        "logo": "./assets/humanizer.svg",
+        "composerIcon": "./assets/humanizer.svg"
       }
     }
   }
