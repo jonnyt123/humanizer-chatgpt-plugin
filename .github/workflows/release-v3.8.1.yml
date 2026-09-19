@@ -1,0 +1,45 @@
+name: Release Humanizer v3.8.1
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/release-v3.8.1.yml
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build submission ZIP
+        run: python3 scripts/build-submission.py
+      - name: Create v3.8.1 tag and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SHA: 5853a2e09da1ca2449e056481c0ced3c9b73607a
+        run: |
+          set -euo pipefail
+          if gh release view v3.8.1 >/dev/null 2>&1; then
+            echo "Release v3.8.1 already exists."
+            exit 0
+          fi
+          if ! git ls-remote --tags origin refs/tags/v3.8.1 | grep -q .; then
+            git tag v3.8.1 "$TARGET_SHA"
+            git push origin refs/tags/v3.8.1
+          fi
+          gh release create v3.8.1 \
+            dist/humanizer-plugin-v3.8.1.zip#humanizer-plugin-v3.8.1.zip \
+            --target "$TARGET_SHA" \
+            --title "Humanizer v3.8.1" \
+            --notes "Public-directory preparation release. Adds final-limit OpenAI listing metadata, required logo and composer icon assets, privacy/terms/support/security documentation, GitHub marketplace import metadata, stricter directory validation, deterministic submission ZIP builds, and a professional README with real release and CI screenshots. Core Humanizer writing and rap workflows remain compatible with v3.8.0."
