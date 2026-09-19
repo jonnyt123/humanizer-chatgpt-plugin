@@ -7,7 +7,7 @@ description: |
   language, stock AI words, bold labels, or filler. Based on Wikipedia's "Signs of AI writing."
 license: MIT
 metadata:
-  version: "3.8.0"
+  version: "3.8.1"
 ---
 
 # Humanizer: remove AI writing patterns
