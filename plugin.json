@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "humanizer",
+  "version": "3.8.0",
+  "description": "Humanize prose and lyrics, preserve the writer's voice, score rap technique, optimize verses and hooks, and generate BPM-aware flow patterns.",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "humanize",
+    "voice",
+    "lyrics",
+    "rap",
+    "rhyme",
+    "cadence",
+    "pocket",
+    "flow"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Humanizer",
+        "shortDescription": "Humanize writing and optimize lyrics without flattening the writer's voice.",
+        "longDescription": "Humanizer rewrites AI-sounding prose and lyrics while preserving meaning, concrete details, and voice. For rap, it can score artifact risk, multisyllabic rhyme, pocket, cadence, and rhyme density; protect strong bars; optimize full verses and verse-to-hook transitions; use supplied BPM and meter for beat-grid-aware analysis; and suggest context-aware flow patterns without pretending text alone reveals exact performed microtiming.",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Humanize this text while preserving my voice and every supported fact.",
+          "Score these lyrics for AI-writing artifacts, then rewrite only the weak lines.",
+          "Analyze this rap verse for multis, pocket, cadence, and rhyme density, then improve the weak bars without touching the strong ones.",
+          "At 142 BPM in 4/4, optimize this verse and hook together and suggest a flow pattern for each bar."
+        ],
+        "brandColor": "#111827"
+      }
+    }
+  }
+}

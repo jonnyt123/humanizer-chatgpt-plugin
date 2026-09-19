@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "humanizer",
+  "description": "Humanize prose and lyrics, preserve the writer's voice, score rap technique, optimize verses and hooks, and generate BPM-aware flow patterns.",
+  "version": "3.8.0",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "humanize",
+    "voice",
+    "lyrics",
+    "rap",
+    "rhyme",
+    "cadence",
+    "pocket",
+    "flow"
+  ],
+  "skills": [
+    "./skills/humanizer"
+  ]
+}
